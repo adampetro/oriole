@@ -1,0 +1,69 @@
+PATH
+  remote: .
+  specs:
+    oriole (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ast (2.4.2)
+    base64 (0.1.1)
+    json (2.6.3)
+    language_server-protocol (3.17.0.3)
+    minitest (5.19.0)
+    parallel (1.23.0)
+    parser (3.2.2.3)
+      ast (~> 2.4.1)
+      racc
+    prettier_print (1.2.1)
+    racc (1.7.1)
+    rainbow (3.1.1)
+    rake (13.0.6)
+    regexp_parser (2.8.1)
+    rexml (3.2.6)
+    rubocop (1.56.1)
+      base64 (~> 0.1.1)
+      json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
+      parallel (~> 1.10)
+      parser (>= 3.2.2.3)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.28.1, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.29.0)
+      parser (>= 3.2.1.0)
+    rubocop-minitest (0.27.0)
+      rubocop (>= 0.90, < 2.0)
+    rubocop-rake (0.6.0)
+      rubocop (~> 1.0)
+    rubocop-shopify (2.14.0)
+      rubocop (~> 1.51)
+    ruby-lsp (0.4.5)
+      language_server-protocol (~> 3.17.0)
+      sorbet-runtime
+      syntax_tree (>= 6.1.1, < 7)
+    ruby-progressbar (1.13.0)
+    sorbet-runtime (0.5.10987)
+    syntax_tree (6.1.1)
+      prettier_print (>= 1.2.0)
+    unicode-display_width (2.4.2)
+
+PLATFORMS
+  arm64-darwin-22
+
+DEPENDENCIES
+  bundler (~> 2.4.10)
+  minitest (~> 5.0)
+  oriole!
+  rake (~> 13.0)
+  rubocop (~> 1.21)
+  rubocop-minitest (~> 0.27.0)
+  rubocop-rake (~> 0.6.0)
+  rubocop-shopify (~> 2.12)
+  ruby-lsp (~> 0.4.0)
+
+BUNDLED WITH
+   2.4.10
