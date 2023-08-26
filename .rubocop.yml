@@ -4,8 +4,21 @@ inherit_gem:
 require:
 - rubocop-rake
 - rubocop-minitest
+- rubocop-sorbet
 
 AllCops:
   TargetRubyVersion: 3.2
   SuggestExtensions: false
   NewCops: enable
+
+Sorbet/ValidSigil:
+  MinimumStrictness: true
+  Enabled: true
+
+Sorbet/StrictSigil:
+  Enabled: true
+  Exclude:
+    - "test/**/*.rb"
+
+Sorbet/ConstantsFromStrings:
+  Enabled: false
