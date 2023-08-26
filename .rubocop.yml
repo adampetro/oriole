@@ -14,11 +14,19 @@ AllCops:
 Sorbet/ValidSigil:
   MinimumStrictness: true
   Enabled: true
+  Exclude:
+    - "bench/**/*.rb"
+    - "rakelib/**/*.rake"
+
+Sorbet/FalseSigil:
+  Enabled: false
 
 Sorbet/StrictSigil:
   Enabled: true
   Exclude:
     - "test/**/*.rb"
+    - "bench/**/*.rb"
+    - "rakelib/**/*.rake"
 
 Sorbet/ConstantsFromStrings:
   Enabled: false

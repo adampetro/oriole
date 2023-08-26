@@ -33,5 +33,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("rake", "~> 13.0")
 
   spec.add_dependency("sorbet-runtime", "~> 0.5")
+  spec.add_dependency("tinygql", "~> 0.1.4")
   spec.add_dependency("zeitwerk", "~> 2.6")
 end

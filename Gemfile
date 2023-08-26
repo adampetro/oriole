@@ -16,4 +16,5 @@ group :development do
   gem "ruby-lsp", "~> 0.4.0", require: false
   gem "sorbet", "~> 0.5"
   gem "tapioca", require: false
+  gem "bluejay", "~> 0.1.0.alpha.2"
 end
