@@ -3,6 +3,7 @@ PATH
   specs:
     oriole (0.1.0)
       sorbet-runtime (~> 0.5)
+      zeitwerk (~> 2.6)
 
 GEM
   remote: https://rubygems.org/
@@ -89,6 +90,7 @@ GEM
     yard-sorbet (0.8.1)
       sorbet-runtime (>= 0.5)
       yard (>= 0.9)
+    zeitwerk (2.6.11)
 
 PLATFORMS
   arm64-darwin-22
