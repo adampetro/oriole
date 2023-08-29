@@ -12,27 +12,27 @@
   ```
   Profiling IPS:
   Warming up --------------------------------------
-     oriole_visibility   575.000  i/100ms
-  oriole_no_visibility   713.000  i/100ms
-               bluejay     3.378k i/100ms
+     oriole_visibility   624.000  i/100ms
+  oriole_no_visibility   779.000  i/100ms
+               bluejay     3.324k i/100ms
   Calculating -------------------------------------
-     oriole_visibility      5.789k (± 1.4%) i/s -     29.325k in   5.066953s
-  oriole_no_visibility      7.601k (± 3.0%) i/s -     38.502k in   5.070720s
-               bluejay     32.907k (± 4.1%) i/s -    165.522k in   5.039484s
+     oriole_visibility      6.205k (± 1.2%) i/s -     31.200k in   5.028634s
+  oriole_no_visibility      8.359k (± 1.2%) i/s -     42.066k in   5.033414s
+               bluejay     33.629k (± 3.1%) i/s -    169.524k in   5.046559s
 
   Comparison:
-               bluejay:    32907.0 i/s
-  oriole_no_visibility:     7600.7 i/s - 4.33x  slower
-     oriole_visibility:     5788.7 i/s - 5.68x  slower
+               bluejay:    33628.7 i/s
+  oriole_no_visibility:     8358.5 i/s - 4.02x  slower
+     oriole_visibility:     6205.4 i/s - 5.42x  slower
 
   Profiling Ruby memory allocations:
   Calculating -------------------------------------
      oriole_visibility    22.648k memsize (   720.000  retained)
                          264.000  objects (    10.000  retained)
                           15.000  strings (     1.000  retained)
-  oriole_no_visibility    12.656k memsize (    40.000  retained)
-                         166.000  objects (     1.000  retained)
-                          14.000  strings (     1.000  retained)
+  oriole_no_visibility    12.656k memsize (     4.880k retained)
+                         166.000  objects (    61.000  retained)
+                          14.000  strings (    12.000  retained)
                bluejay     5.256k memsize (     5.056k retained)
                           40.000  objects (    35.000  retained)
                            0.000  strings (     0.000  retained)
@@ -50,18 +50,18 @@
   ```
   Profiling IPS:
   Warming up --------------------------------------
-     oriole_visibility   363.000  i/100ms
-  oriole_no_visibility   457.000  i/100ms
-               bluejay     3.152k i/100ms
+     oriole_visibility   423.000  i/100ms
+  oriole_no_visibility   580.000  i/100ms
+               bluejay     3.383k i/100ms
   Calculating -------------------------------------
-     oriole_visibility      3.626k (± 3.6%) i/s -     18.150k in   5.012012s
-  oriole_no_visibility      4.887k (± 2.3%) i/s -     24.678k in   5.052241s
-               bluejay     32.227k (± 4.8%) i/s -    160.752k in   5.003521s
+     oriole_visibility      4.212k (± 0.9%) i/s -     21.150k in   5.021318s
+  oriole_no_visibility      5.773k (± 1.0%) i/s -     29.000k in   5.024171s
+               bluejay     32.760k (± 4.2%) i/s -    165.767k in   5.070427s
 
   Comparison:
-               bluejay:    32227.1 i/s
-  oriole_no_visibility:     4887.2 i/s - 6.59x  slower
-     oriole_visibility:     3626.4 i/s - 8.89x  slower
+               bluejay:    32760.0 i/s
+  oriole_no_visibility:     5772.7 i/s - 5.68x  slower
+     oriole_visibility:     4212.4 i/s - 7.78x  slower
 
   Profiling Ruby memory allocations:
   Calculating -------------------------------------
