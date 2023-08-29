@@ -12,27 +12,27 @@
   ```
   Profiling IPS:
   Warming up --------------------------------------
-     oriole_visibility   362.000  i/100ms
-  oriole_no_visibility   488.000  i/100ms
-               bluejay     1.766k i/100ms
+     oriole_visibility   575.000  i/100ms
+  oriole_no_visibility   713.000  i/100ms
+               bluejay     3.378k i/100ms
   Calculating -------------------------------------
-     oriole_visibility      3.682k (± 2.3%) i/s -     18.462k in   5.017324s
-  oriole_no_visibility      4.992k (± 1.3%) i/s -     25.376k in   5.083988s
-               bluejay     18.240k (± 3.1%) i/s -     91.832k in   5.039693s
+     oriole_visibility      5.789k (± 1.4%) i/s -     29.325k in   5.066953s
+  oriole_no_visibility      7.601k (± 3.0%) i/s -     38.502k in   5.070720s
+               bluejay     32.907k (± 4.1%) i/s -    165.522k in   5.039484s
 
   Comparison:
-               bluejay:    18239.9 i/s
-  oriole_no_visibility:     4992.3 i/s - 3.65x  slower
-     oriole_visibility:     3681.7 i/s - 4.95x  slower
+               bluejay:    32907.0 i/s
+  oriole_no_visibility:     7600.7 i/s - 4.33x  slower
+     oriole_visibility:     5788.7 i/s - 5.68x  slower
 
   Profiling Ruby memory allocations:
   Calculating -------------------------------------
-     oriole_visibility    22.648k memsize (   120.000  retained)
-                         264.000  objects (     2.000  retained)
-                          15.000  strings (     0.000  retained)
-  oriole_no_visibility    12.656k memsize (     4.000k retained)
-                         166.000  objects (    56.000  retained)
-                          14.000  strings (    12.000  retained)
+     oriole_visibility    22.648k memsize (   720.000  retained)
+                         264.000  objects (    10.000  retained)
+                          15.000  strings (     1.000  retained)
+  oriole_no_visibility    12.656k memsize (    40.000  retained)
+                         166.000  objects (     1.000  retained)
+                          14.000  strings (     1.000  retained)
                bluejay     5.256k memsize (     5.056k retained)
                           40.000  objects (    35.000  retained)
                            0.000  strings (     0.000  retained)
@@ -50,26 +50,26 @@
   ```
   Profiling IPS:
   Warming up --------------------------------------
-     oriole_visibility   234.000  i/100ms
-  oriole_no_visibility   323.000  i/100ms
-               bluejay     1.804k i/100ms
+     oriole_visibility   363.000  i/100ms
+  oriole_no_visibility   457.000  i/100ms
+               bluejay     3.152k i/100ms
   Calculating -------------------------------------
-     oriole_visibility      2.403k (± 3.3%) i/s -     12.168k in   5.069266s
-  oriole_no_visibility      3.274k (± 1.9%) i/s -     16.473k in   5.033067s
-               bluejay     18.418k (± 2.1%) i/s -     93.808k in   5.095735s
+     oriole_visibility      3.626k (± 3.6%) i/s -     18.150k in   5.012012s
+  oriole_no_visibility      4.887k (± 2.3%) i/s -     24.678k in   5.052241s
+               bluejay     32.227k (± 4.8%) i/s -    160.752k in   5.003521s
 
   Comparison:
-               bluejay:    18417.7 i/s
-  oriole_no_visibility:     3274.2 i/s - 5.63x  slower
-     oriole_visibility:     2403.1 i/s - 7.66x  slower
+               bluejay:    32227.1 i/s
+  oriole_no_visibility:     4887.2 i/s - 6.59x  slower
+     oriole_visibility:     3626.4 i/s - 8.89x  slower
 
   Profiling Ruby memory allocations:
   Calculating -------------------------------------
-     oriole_visibility    22.648k memsize (     7.680k retained)
-                         264.000  objects (   104.000  retained)
+     oriole_visibility    22.648k memsize (     7.760k retained)
+                         264.000  objects (   106.000  retained)
                           15.000  strings (    12.000  retained)
-  oriole_no_visibility    12.656k memsize (     4.960k retained)
-                         166.000  objects (    63.000  retained)
+  oriole_no_visibility    12.656k memsize (     5.040k retained)
+                         166.000  objects (    65.000  retained)
                           14.000  strings (    12.000  retained)
                bluejay     5.256k memsize (     5.056k retained)
                           40.000  objects (    35.000  retained)
