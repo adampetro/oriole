@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    oriole (0.1.0)
+    oriole (0.1.0.alpha.0)
       sorbet-runtime (~> 0.5)
       tinygql (~> 0.1.4)
       zeitwerk (~> 2.6)
