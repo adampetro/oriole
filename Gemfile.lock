@@ -11,6 +11,9 @@ GEM
   specs:
     ast (2.4.2)
     base64 (0.1.1)
+    benchmark-ips (2.12.0)
+    benchmark-memory (0.2.0)
+      memory_profiler (~> 1)
     bluejay (0.1.0.alpha.2-arm64-darwin)
       sorbet-runtime
     bluejay (0.1.0.alpha.2-x86_64-darwin)
@@ -19,6 +22,7 @@ GEM
     erubi (1.12.0)
     json (2.6.3)
     language_server-protocol (3.17.0.3)
+    memory_profiler (1.0.1)
     minitest (5.19.0)
     netrc (0.11.0)
     parallel (1.23.0)
@@ -103,6 +107,8 @@ PLATFORMS
   x86_64-darwin-22
 
 DEPENDENCIES
+  benchmark-ips
+  benchmark-memory
   bluejay (~> 0.1.0.alpha.2)
   bundler (~> 2.4.10)
   minitest (~> 5.0)

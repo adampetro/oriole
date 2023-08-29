@@ -24,9 +24,18 @@ module Bluejay::Base; end
 module Bluejay::Base::CustomScalarType
   interface!
 
+  mixes_in_class_methods ::Bluejay::Base::CustomScalarType::ClassMethods
+end
+
+# @abstract Subclasses must implement the `abstract` methods below.
+#
+# source://bluejay//lib/bluejay/base/custom_scalar_type.rb#12
+module Bluejay::Base::CustomScalarType::ClassMethods
+  abstract!
+
   # @abstract
   #
-  # source://bluejay//lib/bluejay/base/custom_scalar_type.rb#13
+  # source://bluejay//lib/bluejay/base/custom_scalar_type.rb#19
   sig { abstract.returns(::Bluejay::CustomScalarTypeDefinition) }
   def definition; end
 end
@@ -37,20 +46,20 @@ end
 module Bluejay::Base::Directive
   interface!
 
-  # @abstract
-  #
-  # source://bluejay//lib/bluejay/base/directive.rb#22
-  sig { abstract.returns(::Bluejay::DirectiveDefinition) }
-  def definition; end
+  mixes_in_class_methods ::Bluejay::Base::Directive::ClassMethods
 end
 
 # @abstract Subclasses must implement the `abstract` methods below.
 #
-# source://bluejay//lib/bluejay/base/directive.rb#10
-module Bluejay::Base::Directive::Instance
-  interface!
+# source://bluejay//lib/bluejay/base/directive.rb#12
+module Bluejay::Base::Directive::ClassMethods
+  abstract!
 
-  mixes_in_class_methods ::Bluejay::Base::Directive
+  # @abstract
+  #
+  # source://bluejay//lib/bluejay/base/directive.rb#19
+  sig { abstract.returns(::Bluejay::DirectiveDefinition) }
+  def definition; end
 end
 
 # @abstract Subclasses must implement the `abstract` methods below.
@@ -59,9 +68,18 @@ end
 module Bluejay::Base::EnumType
   interface!
 
+  mixes_in_class_methods ::Bluejay::Base::EnumType::ClassMethods
+end
+
+# @abstract Subclasses must implement the `abstract` methods below.
+#
+# source://bluejay//lib/bluejay/base/enum_type.rb#12
+module Bluejay::Base::EnumType::ClassMethods
+  abstract!
+
   # @abstract
   #
-  # source://bluejay//lib/bluejay/base/enum_type.rb#13
+  # source://bluejay//lib/bluejay/base/enum_type.rb#19
   sig { abstract.returns(::Bluejay::EnumTypeDefinition) }
   def definition; end
 end
@@ -72,9 +90,18 @@ end
 module Bluejay::Base::InputObjectType
   interface!
 
+  mixes_in_class_methods ::Bluejay::Base::InputObjectType::ClassMethods
+end
+
+# @abstract Subclasses must implement the `abstract` methods below.
+#
+# source://bluejay//lib/bluejay/base/input_object_type.rb#12
+module Bluejay::Base::InputObjectType::ClassMethods
+  abstract!
+
   # @abstract
   #
-  # source://bluejay//lib/bluejay/base/input_object_type.rb#13
+  # source://bluejay//lib/bluejay/base/input_object_type.rb#19
   sig { abstract.returns(::Bluejay::InputObjectTypeDefinition) }
   def definition; end
 end
@@ -85,9 +112,18 @@ end
 module Bluejay::Base::InterfaceType
   interface!
 
+  mixes_in_class_methods ::Bluejay::Base::InterfaceType::ClassMethods
+end
+
+# @abstract Subclasses must implement the `abstract` methods below.
+#
+# source://bluejay//lib/bluejay/base/interface_type.rb#12
+module Bluejay::Base::InterfaceType::ClassMethods
+  abstract!
+
   # @abstract
   #
-  # source://bluejay//lib/bluejay/base/interface_type.rb#13
+  # source://bluejay//lib/bluejay/base/interface_type.rb#19
   sig { abstract.returns(::Bluejay::InterfaceTypeDefinition) }
   def definition; end
 end
@@ -98,9 +134,18 @@ end
 module Bluejay::Base::ObjectType
   interface!
 
+  mixes_in_class_methods ::Bluejay::Base::ObjectType::ClassMethods
+end
+
+# @abstract Subclasses must implement the `abstract` methods below.
+#
+# source://bluejay//lib/bluejay/base/object_type.rb#12
+module Bluejay::Base::ObjectType::ClassMethods
+  abstract!
+
   # @abstract
   #
-  # source://bluejay//lib/bluejay/base/object_type.rb#13
+  # source://bluejay//lib/bluejay/base/object_type.rb#19
   sig { abstract.returns(::Bluejay::ObjectTypeDefinition) }
   def definition; end
 end
@@ -112,6 +157,17 @@ module Bluejay::Base::QueryRoot
   requires_ancestor { Bluejay::Base::ObjectType }
 
   interface!
+
+  mixes_in_class_methods ::Bluejay::Base::QueryRoot::ClassMethods
+end
+
+# @abstract Subclasses must implement the `abstract` methods below.
+#
+# source://bluejay//lib/bluejay/base/query_root.rb#13
+module Bluejay::Base::QueryRoot::ClassMethods
+  requires_ancestor { Bluejay::Base::ObjectType::ClassMethods }
+
+  abstract!
 end
 
 # @abstract Subclasses must implement the `abstract` methods below.
@@ -120,9 +176,18 @@ end
 module Bluejay::Base::Schema
   interface!
 
+  mixes_in_class_methods ::Bluejay::Base::Schema::ClassMethods
+end
+
+# @abstract Subclasses must implement the `abstract` methods below.
+#
+# source://bluejay//lib/bluejay/base/schema.rb#12
+module Bluejay::Base::Schema::ClassMethods
+  abstract!
+
   # @abstract
   #
-  # source://bluejay//lib/bluejay/base/schema.rb#13
+  # source://bluejay//lib/bluejay/base/schema.rb#19
   sig { abstract.returns(::Bluejay::SchemaDefinition) }
   def definition; end
 end
@@ -133,18 +198,27 @@ end
 module Bluejay::Base::UnionType
   interface!
 
+  mixes_in_class_methods ::Bluejay::Base::UnionType::ClassMethods
+end
+
+# @abstract Subclasses must implement the `abstract` methods below.
+#
+# source://bluejay//lib/bluejay/base/union_type.rb#12
+module Bluejay::Base::UnionType::ClassMethods
+  abstract!
+
   # @abstract
   #
-  # source://bluejay//lib/bluejay/base/union_type.rb#13
+  # source://bluejay//lib/bluejay/base/union_type.rb#19
   sig { abstract.returns(::Bluejay::UnionTypeDefinition) }
   def definition; end
 end
 
 # source://bluejay//lib/bluejay/base_input_type.rb#5
-Bluejay::BaseInputType = T.type_alias { T.any(::Bluejay::Base::CustomScalarType, ::Bluejay::Base::EnumType, ::Bluejay::Base::InputObjectType, ::Bluejay::Scalar) }
+Bluejay::BaseInputType = T.type_alias { T.any(::Bluejay::Base::CustomScalarType::ClassMethods, ::Bluejay::Base::EnumType::ClassMethods, ::Bluejay::Base::InputObjectType::ClassMethods, ::Bluejay::Scalar) }
 
 # source://bluejay//lib/bluejay/base_output_type.rb#5
-Bluejay::BaseOutputType = T.type_alias { T.any(::Bluejay::Base::CustomScalarType, ::Bluejay::Base::EnumType, ::Bluejay::Base::InterfaceType, ::Bluejay::Base::ObjectType, ::Bluejay::Base::UnionType, ::Bluejay::Scalar) }
+Bluejay::BaseOutputType = T.type_alias { T.any(::Bluejay::Base::CustomScalarType::ClassMethods, ::Bluejay::Base::EnumType::ClassMethods, ::Bluejay::Base::InterfaceType::ClassMethods, ::Bluejay::Base::ObjectType::ClassMethods, ::Bluejay::Base::UnionType::ClassMethods, ::Bluejay::Scalar) }
 
 # source://bluejay//lib/bluejay/builtin.rb#5
 module Bluejay::Builtin
@@ -352,8 +426,9 @@ end
 # source://bluejay//lib/bluejay/custom_scalar_type.rb#5
 class Bluejay::CustomScalarType
   extend T::Generic
+  include ::Bluejay::Base::CustomScalarType
+  extend ::Bluejay::Base::CustomScalarType::ClassMethods
   extend ::Bluejay::NameFromClass
-  extend ::Bluejay::Base::CustomScalarType
 
   abstract!
 
@@ -416,59 +491,51 @@ class Bluejay::CustomScalarTypeDefinition
   end
 end
 
-class Bluejay::CustomScalarTypeDefinition::CoercionMethodSignature
-  class << self
-    def exception(_arg0); end
-  end
-end
-
-Bluejay::CustomScalarTypeDefinition::CoercionMethodSignature::Result = T.let(T.unsafe(nil), Bluejay::CustomScalarTypeDefinition::CoercionMethodSignature)
-
 # @abstract It cannot be directly instantiated. Subclasses must implement the `abstract` methods below.
 #
 # source://bluejay//lib/bluejay/directive.rb#5
 class Bluejay::Directive
-  include ::Bluejay::Base::Directive::Instance
-  extend ::Bluejay::Base::Directive
+  include ::Bluejay::Base::Directive
+  extend ::Bluejay::Base::Directive::ClassMethods
   extend ::Bluejay::InputTypeShorthands
   extend ::Bluejay::NameFromClass
 
   abstract!
 
-  # source://bluejay//lib/bluejay/directive.rb#59
+  # source://bluejay//lib/bluejay/directive.rb#57
   def initialize(**kwargs); end
 
-  # source://bluejay//lib/bluejay/directive.rb#67
+  # source://bluejay//lib/bluejay/directive.rb#65
   def ==(other); end
 
   class << self
     # @abstract
     #
-    # source://bluejay//lib/bluejay/directive.rb#28
+    # source://bluejay//lib/bluejay/directive.rb#27
     sig { abstract.returns(T::Array[::Bluejay::InputValueDefinition]) }
     def argument_definitions; end
 
-    # source://bluejay//lib/bluejay/directive.rb#23
+    # source://bluejay//lib/bluejay/directive.rb#22
     sig { overridable.returns(T.nilable(::String)) }
     def description; end
 
-    # source://bluejay//lib/bluejay/directive.rb#18
+    # source://bluejay//lib/bluejay/directive.rb#17
     sig { overridable.returns(::String) }
     def graphql_name; end
 
     # @abstract
     #
-    # source://bluejay//lib/bluejay/directive.rb#31
+    # source://bluejay//lib/bluejay/directive.rb#30
     sig { abstract.returns(T::Array[::Bluejay::DirectiveLocation]) }
     def locations; end
 
-    # source://bluejay//lib/bluejay/directive.rb#34
+    # source://bluejay//lib/bluejay/directive.rb#33
     sig { overridable.returns(T::Boolean) }
     def repeatable?; end
 
     private
 
-    # source://bluejay//lib/bluejay/directive.rb#41
+    # source://bluejay//lib/bluejay/directive.rb#40
     sig(:final) { override.returns(::Bluejay::DirectiveDefinition) }
     def definition; end
   end
@@ -513,33 +580,34 @@ Bluejay::DirectiveLocation::VARIABLE_DEFINITION = T.let(T.unsafe(nil), Bluejay::
 #
 # source://bluejay//lib/bluejay/enum_type.rb#5
 class Bluejay::EnumType
+  include ::Bluejay::Base::EnumType
+  extend ::Bluejay::Base::EnumType::ClassMethods
   extend ::Bluejay::NameFromClass
-  extend ::Bluejay::Base::EnumType
 
   abstract!
 
   class << self
-    # source://bluejay//lib/bluejay/enum_type.rb#20
+    # source://bluejay//lib/bluejay/enum_type.rb#21
     sig { overridable.returns(T.nilable(::String)) }
     def description; end
 
-    # source://bluejay//lib/bluejay/enum_type.rb#28
+    # source://bluejay//lib/bluejay/enum_type.rb#29
     sig { overridable.returns(T::Array[::Bluejay::Directive]) }
     def directives; end
 
     # @abstract
     #
-    # source://bluejay//lib/bluejay/enum_type.rb#25
+    # source://bluejay//lib/bluejay/enum_type.rb#26
     sig { abstract.returns(T::Array[::Bluejay::EnumValueDefinition]) }
     def enum_value_definitions; end
 
-    # source://bluejay//lib/bluejay/enum_type.rb#15
+    # source://bluejay//lib/bluejay/enum_type.rb#16
     sig { overridable.returns(::String) }
     def graphql_name; end
 
     private
 
-    # source://bluejay//lib/bluejay/enum_type.rb#35
+    # source://bluejay//lib/bluejay/enum_type.rb#36
     sig(:final) { override.returns(::Bluejay::EnumTypeDefinition) }
     def definition; end
   end
@@ -584,11 +652,11 @@ class Bluejay::Errors::BaseError < ::StandardError; end
 # source://bluejay//lib/bluejay/errors.rb#8
 class Bluejay::Errors::DefaultValueError < ::Bluejay::Errors::BaseError
   # source://bluejay//lib/bluejay/errors.rb#12
-  sig { params(errors: T::Array[::Bluejay::CoercionError], value: ::Object, ivd_name: ::String).void }
-  def initialize(errors, value, ivd_name); end
+  sig { params(errors: T::Array[::Bluejay::CoercionError], value: ::Object).void }
+  def initialize(errors, value); end
 end
 
-# source://bluejay//lib/bluejay/errors.rb#19
+# source://bluejay//lib/bluejay/errors.rb#18
 class Bluejay::Errors::NonUniqueDefinitionNameError < ::Bluejay::Errors::BaseError; end
 
 class Bluejay::ExecutionError
@@ -596,7 +664,6 @@ class Bluejay::ExecutionError
   def inspect; end
   def message; end
   def path; end
-  def to_h; end
 
   class << self
     def new(*_arg0); end
@@ -646,51 +713,52 @@ end
 #
 # source://bluejay//lib/bluejay/input_object_type.rb#5
 class Bluejay::InputObjectType
+  include ::Bluejay::Base::InputObjectType
+  extend ::Bluejay::Base::InputObjectType::ClassMethods
   extend ::Bluejay::InputTypeShorthands
   extend ::Bluejay::NameFromClass
-  extend ::Bluejay::Base::InputObjectType
 
   abstract!
 
-  # source://bluejay//lib/bluejay/input_object_type.rb#58
+  # source://bluejay//lib/bluejay/input_object_type.rb#59
   def initialize(**kwargs); end
 
-  # source://bluejay//lib/bluejay/input_object_type.rb#66
+  # source://bluejay//lib/bluejay/input_object_type.rb#67
   def ==(other); end
 
   class << self
-    # source://bluejay//lib/bluejay/input_object_type.rb#34
-    sig { params(value: T.untyped, context: T.untyped).returns(::Bluejay::Result) }
-    def coerce_input(value, context: T.unsafe(nil)); end
+    # source://bluejay//lib/bluejay/input_object_type.rb#36
+    sig { params(value: T.untyped).returns(::Bluejay::Result) }
+    def coerce_input(value); end
 
-    # source://bluejay//lib/bluejay/input_object_type.rb#21
+    # source://bluejay//lib/bluejay/input_object_type.rb#23
     sig { overridable.returns(T.nilable(::String)) }
     def description; end
 
-    # source://bluejay//lib/bluejay/input_object_type.rb#29
+    # source://bluejay//lib/bluejay/input_object_type.rb#31
     sig { overridable.returns(T::Array[::Bluejay::Directive]) }
     def directives; end
 
-    # source://bluejay//lib/bluejay/input_object_type.rb#16
+    # source://bluejay//lib/bluejay/input_object_type.rb#18
     sig { overridable.returns(::String) }
     def graphql_name; end
 
     # @abstract
     #
-    # source://bluejay//lib/bluejay/input_object_type.rb#26
+    # source://bluejay//lib/bluejay/input_object_type.rb#28
     sig { abstract.returns(T::Array[::Bluejay::InputValueDefinition]) }
     def input_field_definitions; end
 
     private
 
-    # source://bluejay//lib/bluejay/input_object_type.rb#41
+    # source://bluejay//lib/bluejay/input_object_type.rb#43
     sig(:final) { override.returns(::Bluejay::InputObjectTypeDefinition) }
     def definition; end
   end
 end
 
 class Bluejay::InputObjectTypeDefinition
-  def coerce_input(_arg0, _arg1); end
+  def coerce_input(_arg0); end
   def description; end
   def enum_values(_arg0); end
   def fields(_arg0); end
@@ -738,7 +806,7 @@ module Bluejay::InputTypeShorthands
   # source://bluejay//lib/bluejay/input_type_shorthands.rb#9
   sig do
     params(
-      t: T.any(::Bluejay::Base::CustomScalarType, ::Bluejay::Base::EnumType, ::Bluejay::Base::InputObjectType, ::Bluejay::Scalar)
+      t: T.any(::Bluejay::Base::CustomScalarType::ClassMethods, ::Bluejay::Base::EnumType::ClassMethods, ::Bluejay::Base::InputObjectType::ClassMethods, ::Bluejay::Scalar)
     ).returns(::Bluejay::InputType)
   end
   def it(t); end
@@ -746,7 +814,7 @@ module Bluejay::InputTypeShorthands
   # source://bluejay//lib/bluejay/input_type_shorthands.rb#14
   sig do
     params(
-      t: T.any(::Bluejay::Base::CustomScalarType, ::Bluejay::Base::EnumType, ::Bluejay::Base::InputObjectType, ::Bluejay::Scalar)
+      t: T.any(::Bluejay::Base::CustomScalarType::ClassMethods, ::Bluejay::Base::EnumType::ClassMethods, ::Bluejay::Base::InputObjectType::ClassMethods, ::Bluejay::Scalar)
     ).returns(::Bluejay::InputType)
   end
   def it!(t); end
@@ -762,8 +830,6 @@ end
 
 class Bluejay::InputValueDefinition
   def default_value; end
-  def deprecated?; end
-  def deprecation_reason; end
   def description; end
   def name; end
   def resolve_typename; end
@@ -787,43 +853,44 @@ end
 #
 # source://bluejay//lib/bluejay/interface_type.rb#5
 class Bluejay::InterfaceType
+  include ::Bluejay::Base::InterfaceType
+  extend ::Bluejay::Base::InterfaceType::ClassMethods
   extend ::Bluejay::OutputTypeShorthands
   extend ::Bluejay::InputTypeShorthands
   extend ::Bluejay::NameFromClass
-  extend ::Bluejay::Base::InterfaceType
 
   abstract!
 
   class << self
-    # source://bluejay//lib/bluejay/interface_type.rb#22
+    # source://bluejay//lib/bluejay/interface_type.rb#23
     sig { overridable.returns(T.nilable(::String)) }
     def description; end
 
-    # source://bluejay//lib/bluejay/interface_type.rb#35
+    # source://bluejay//lib/bluejay/interface_type.rb#36
     sig { overridable.returns(T::Array[::Bluejay::Directive]) }
     def directives; end
 
     # @abstract
     #
-    # source://bluejay//lib/bluejay/interface_type.rb#27
+    # source://bluejay//lib/bluejay/interface_type.rb#28
     sig { abstract.returns(T::Array[::Bluejay::FieldDefinition]) }
     def field_definitions; end
 
-    # source://bluejay//lib/bluejay/interface_type.rb#17
+    # source://bluejay//lib/bluejay/interface_type.rb#18
     sig { overridable.returns(::String) }
     def graphql_name; end
 
-    # source://bluejay//lib/bluejay/interface_type.rb#30
+    # source://bluejay//lib/bluejay/interface_type.rb#31
     sig { overridable.returns(T::Array[::Bluejay::InterfaceImplementation]) }
     def interface_implementations; end
 
     private
 
-    # source://bluejay//lib/bluejay/interface_type.rb#42
+    # source://bluejay//lib/bluejay/interface_type.rb#43
     sig { params(name: ::Symbol).returns(T.untyped) }
     def const_missing(name); end
 
-    # source://bluejay//lib/bluejay/interface_type.rb#52
+    # source://bluejay//lib/bluejay/interface_type.rb#53
     sig { override.returns(::Bluejay::InterfaceTypeDefinition) }
     def definition; end
   end
@@ -865,43 +932,44 @@ end
 #
 # source://bluejay//lib/bluejay/object_type.rb#5
 class Bluejay::ObjectType
+  include ::Bluejay::Base::ObjectType
+  extend ::Bluejay::Base::ObjectType::ClassMethods
   extend ::Bluejay::OutputTypeShorthands
   extend ::Bluejay::InputTypeShorthands
   extend ::Bluejay::NameFromClass
-  extend ::Bluejay::Base::ObjectType
 
   abstract!
 
   class << self
-    # source://bluejay//lib/bluejay/object_type.rb#22
+    # source://bluejay//lib/bluejay/object_type.rb#23
     sig { overridable.returns(T.nilable(::String)) }
     def description; end
 
-    # source://bluejay//lib/bluejay/object_type.rb#35
+    # source://bluejay//lib/bluejay/object_type.rb#36
     sig { overridable.returns(T::Array[::Bluejay::Directive]) }
     def directives; end
 
     # @abstract
     #
-    # source://bluejay//lib/bluejay/object_type.rb#27
+    # source://bluejay//lib/bluejay/object_type.rb#28
     sig { abstract.returns(T::Array[::Bluejay::FieldDefinition]) }
     def field_definitions; end
 
-    # source://bluejay//lib/bluejay/object_type.rb#17
+    # source://bluejay//lib/bluejay/object_type.rb#18
     sig { overridable.returns(::String) }
     def graphql_name; end
 
-    # source://bluejay//lib/bluejay/object_type.rb#30
+    # source://bluejay//lib/bluejay/object_type.rb#31
     sig { overridable.returns(T::Array[::Bluejay::InterfaceImplementation]) }
     def interface_implementations; end
 
     private
 
-    # source://bluejay//lib/bluejay/object_type.rb#42
+    # source://bluejay//lib/bluejay/object_type.rb#43
     sig { params(name: ::Symbol).returns(T.untyped) }
     def const_missing(name); end
 
-    # source://bluejay//lib/bluejay/object_type.rb#52
+    # source://bluejay//lib/bluejay/object_type.rb#53
     sig { override.returns(::Bluejay::ObjectTypeDefinition) }
     def definition; end
   end
@@ -963,7 +1031,7 @@ module Bluejay::OutputTypeShorthands
   # source://bluejay//lib/bluejay/output_type_shorthands.rb#9
   sig do
     params(
-      t: T.any(::Bluejay::Base::CustomScalarType, ::Bluejay::Base::EnumType, ::Bluejay::Base::InterfaceType, ::Bluejay::Base::ObjectType, ::Bluejay::Base::UnionType, ::Bluejay::Scalar)
+      t: T.any(::Bluejay::Base::CustomScalarType::ClassMethods, ::Bluejay::Base::EnumType::ClassMethods, ::Bluejay::Base::InterfaceType::ClassMethods, ::Bluejay::Base::ObjectType::ClassMethods, ::Bluejay::Base::UnionType::ClassMethods, ::Bluejay::Scalar)
     ).returns(::Bluejay::OutputType)
   end
   def ot(t); end
@@ -971,7 +1039,7 @@ module Bluejay::OutputTypeShorthands
   # source://bluejay//lib/bluejay/output_type_shorthands.rb#14
   sig do
     params(
-      t: T.any(::Bluejay::Base::CustomScalarType, ::Bluejay::Base::EnumType, ::Bluejay::Base::InterfaceType, ::Bluejay::Base::ObjectType, ::Bluejay::Base::UnionType, ::Bluejay::Scalar)
+      t: T.any(::Bluejay::Base::CustomScalarType::ClassMethods, ::Bluejay::Base::EnumType::ClassMethods, ::Bluejay::Base::InterfaceType::ClassMethods, ::Bluejay::Base::ObjectType::ClassMethods, ::Bluejay::Base::UnionType::ClassMethods, ::Bluejay::Scalar)
     ).returns(::Bluejay::OutputType)
   end
   def ot!(t); end
@@ -981,14 +1049,15 @@ end
 #
 # source://bluejay//lib/bluejay/query_root.rb#5
 class Bluejay::QueryRoot < ::Bluejay::ObjectType
-  extend ::Bluejay::Base::QueryRoot
+  include ::Bluejay::Base::QueryRoot
+  extend ::Bluejay::Base::QueryRoot::ClassMethods
 
   abstract!
 
   class << self
     private
 
-    # source://bluejay//lib/bluejay/query_root.rb#16
+    # source://bluejay//lib/bluejay/query_root.rb#17
     sig { override.returns(::Bluejay::ObjectTypeDefinition) }
     def definition; end
   end
@@ -1033,17 +1102,18 @@ Bluejay::Scalar::String = T.let(T.unsafe(nil), Bluejay::Scalar)
 #
 # source://bluejay//lib/bluejay/schema.rb#5
 class Bluejay::Schema
+  include ::Bluejay::Base::Schema
   extend ::Bluejay::Finalize
-  extend ::Bluejay::Base::Schema
+  extend ::Bluejay::Base::Schema::ClassMethods
 
   abstract!
 
   class << self
-    # source://bluejay//lib/bluejay/schema.rb#15
+    # source://bluejay//lib/bluejay/schema.rb#16
     sig { overridable.returns(T.nilable(::String)) }
     def description; end
 
-    # source://bluejay//lib/bluejay/schema.rb#28
+    # source://bluejay//lib/bluejay/schema.rb#29
     sig { overridable.returns(T::Array[::Bluejay::Directive]) }
     def directives; end
 
@@ -1053,29 +1123,28 @@ class Bluejay::Schema
         query: ::String,
         initial_value: ::Object,
         operation_name: T.nilable(::String),
-        variables: T::Hash[::String, T.untyped],
-        context: T.untyped
+        variables: T::Hash[::String, T.untyped]
       ).returns(::Bluejay::ExecutionResult)
     end
-    def execute(query:, initial_value:, operation_name: T.unsafe(nil), variables: T.unsafe(nil), context: T.unsafe(nil)); end
+    def execute(query:, initial_value:, operation_name: T.unsafe(nil), variables: T.unsafe(nil)); end
 
-    # source://bluejay//lib/bluejay/schema.rb#23
+    # source://bluejay//lib/bluejay/schema.rb#24
     sig { overridable.returns(T.nilable(T.class_of(Bluejay::ObjectType))) }
     def mutation; end
 
     # @abstract
     #
-    # source://bluejay//lib/bluejay/schema.rb#20
+    # source://bluejay//lib/bluejay/schema.rb#21
     sig { abstract.returns(T.class_of(Bluejay::QueryRoot)) }
     def query; end
 
     # source://bluejay//lib/bluejay/schema.rb#51
-    sig { params(context: T.untyped).returns(::String) }
-    def to_definition(context: T.unsafe(nil)); end
+    sig { returns(::String) }
+    def to_definition; end
 
     # source://bluejay//lib/bluejay/schema.rb#46
-    sig { params(query: ::String, context: T.untyped).returns(T::Array[::Bluejay::ValidationError]) }
-    def validate_query(query:, context: T.unsafe(nil)); end
+    sig { params(query: ::String).returns(T::Array[::Bluejay::ValidationError]) }
+    def validate_query(query:); end
 
     protected
 
@@ -1098,15 +1167,15 @@ end
 class Bluejay::SchemaDefinition
   def description; end
   def directives; end
-  def execute(_arg0, _arg1, _arg2, _arg3, _arg4); end
+  def execute(_arg0, _arg1, _arg2, _arg3); end
   def mutation_type; end
   def query_type; end
   def resolve_typename; end
   def subscription_type; end
-  def to_definition(_arg0); end
+  def to_definition; end
   def type(_arg0); end
   def types; end
-  def validate_query(_arg0, _arg1); end
+  def validate_query(_arg0); end
 
   class << self
     def new(_arg0); end
@@ -1123,33 +1192,34 @@ end
 #
 # source://bluejay//lib/bluejay/union_type.rb#5
 class Bluejay::UnionType
+  include ::Bluejay::Base::UnionType
+  extend ::Bluejay::Base::UnionType::ClassMethods
   extend ::Bluejay::NameFromClass
-  extend ::Bluejay::Base::UnionType
 
   abstract!
 
   class << self
-    # source://bluejay//lib/bluejay/union_type.rb#20
+    # source://bluejay//lib/bluejay/union_type.rb#21
     sig { overridable.returns(T.nilable(::String)) }
     def description; end
 
-    # source://bluejay//lib/bluejay/union_type.rb#28
+    # source://bluejay//lib/bluejay/union_type.rb#29
     sig { overridable.returns(T::Array[::Bluejay::Directive]) }
     def directives; end
 
-    # source://bluejay//lib/bluejay/union_type.rb#15
+    # source://bluejay//lib/bluejay/union_type.rb#16
     sig { overridable.returns(::String) }
     def graphql_name; end
 
     # @abstract
     #
-    # source://bluejay//lib/bluejay/union_type.rb#25
+    # source://bluejay//lib/bluejay/union_type.rb#26
     sig { abstract.returns(T::Array[::Bluejay::UnionMemberType]) }
     def member_types; end
 
     private
 
-    # source://bluejay//lib/bluejay/union_type.rb#35
+    # source://bluejay//lib/bluejay/union_type.rb#36
     sig { override.returns(::Bluejay::UnionTypeDefinition) }
     def definition; end
   end
@@ -1184,23 +1254,4 @@ class Bluejay::ValidationError
   class << self
     def new(_arg0); end
   end
-end
-
-# @abstract Subclasses must implement the `abstract` methods below.
-#
-# source://bluejay//lib/bluejay/visibility.rb#5
-module Bluejay::Visibility
-  interface!
-
-  # @abstract
-  #
-  # source://bluejay//lib/bluejay/visibility.rb#12
-  sig { abstract.returns(::String) }
-  def cache_key; end
-
-  # @abstract
-  #
-  # source://bluejay//lib/bluejay/visibility.rb#15
-  sig { abstract.params(context: T.untyped).returns(T::Boolean) }
-  def visible?(context); end
 end
